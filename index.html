@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recensioni di Novaris Capitallimited | Leggi 10.452 recensioni</title>
+    
+    <link rel="stylesheet" href="https://businessunitprofile-cdn.trustpilot.net/businessunitprofile-consumersite/_next/static/css/da84aefec2cc9138.css">
+    <link rel="stylesheet" href="https://businessunitprofile-cdn.trustpilot.net/businessunitprofile-consumersite/_next/static/css/c679918ae4347cb9.css">
+    <link rel="stylesheet" href="https://businessunitprofile-cdn.trustpilot.net/businessunitprofile-consumersite/_next/static/css/fa9fb8c86b2ba716.css">
+
+    <style>
+        body { background-color: #fcfbf3; font-family: "Trustpilot Sans", Arial, sans-serif; color: #191919; margin: 0; }
+        .main-container { max-width: 1040px; margin: 0 auto; padding: 20px; }
+        
+        .header-box { background: white; border: 1px solid #dcd6d1; padding: 24px; border-radius: 4px; display: flex; align-items: center; gap: 24px; margin-bottom: 24px; }
+        .logo-img { width: 120px; height: 90px; border-radius: 4px; object-fit: cover; border: 1px solid #eee; }
+        
+        .score-card { background: white; border: 1px solid #dcd6d1; border-radius: 12px; padding: 32px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; margin-bottom: 40px; }
+        .score-big { font-size: 48px; font-weight: 800; line-height: 1; }
+        .bar-row { display: flex; align-items: center; gap: 12px; font-size: 14px; margin-bottom: 8px; }
+        .bar-bg { flex-grow: 1; height: 16px; background: #f2f0ec; border-radius: 2px; }
+        .bar-fill { height: 100%; background: #191919; border-radius: 2px; }
+
+        .search-wrapper { margin-bottom: 40px; }
+        .search-bar-custom { width: 100%; padding: 16px 25px; border: 1px solid #dcd6d1; border-radius: 35px; font-size: 17px; color: #696969; background: white; outline: none; margin-bottom: 15px; box-sizing: border-box; }
+        .tags-row-custom { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tag-pill-custom { padding: 8px 20px; border: 1px solid #dcd6d1; border-radius: 25px; background: white; font-size: 15px; color: #191919; cursor: pointer; }
+
+        .review-card { background: white; border: 1px solid #e8e8e8; padding: 30px; border-radius: 18px; margin-bottom: 25px; position: relative; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .user-info { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #191919; }
+        
+        .star-container { display: flex; gap: 3px; margin-bottom: 15px; }
+        .star-sq { width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; color: white; border-radius: 2px; font-size: 14px; }
+        .bg-green { background: #00b67a; }
+        .bg-yellow { background: #ffce00; }
+        .bg-red { background: #ff3722; }
+        .bg-gray { background: #dcdce6; }
+
+        .date-float { position: absolute; right: 30px; top: 35px; color: #696969; font-size: 13px; }
+        .review-body { line-height: 1.7; font-size: 15px; }
+        .verified-label { background: #f2f0ec; padding: 5px 12px; border-radius: 6px; font-size: 12px; color: #696969; font-weight: 600; margin-top: 15px; display: inline-block; }
+        
+        .show-more-container { text-align: center; margin: 40px 0; }
+        .blue-pill-button { 
+            background: #e8ebf7; 
+            color: #3c57bc; 
+            padding: 16px 40px; 
+            border-radius: 40px; 
+            font-weight: 700; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 15px; 
+            width: 100%;
+            max-width: 650px;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        .pagination-bar {
+            display: inline-flex;
+            border: 1px solid #dcd6d1;
+            border-radius: 4px;
+            overflow: hidden;
+            background: white;
+        }
+        .pag-item {
+            padding: 12px 24px;
+            font-size: 16px;
+            border-right: 1px solid #dcd6d1;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pag-item:last-child { border-right: none; }
+        .pag-prev { color: #bbb; cursor: default; background: #f9f9f9; }
+        .pag-active { background: #e8ebf7; color: #3c57bc; font-weight: 700; border: 1px solid #3c57bc; margin: -1px; position: relative; z-index: 1; }
+        .pag-next { color: #3c57bc; font-weight: 500; }
+
+        /* NUOVO CSS DELLA NUVOLA */
+        #login-modal { 
+            display: none; 
+            position: fixed; 
+            inset: 0; 
+            background: rgba(0,0,0,0.7); 
+            z-index: 10000; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px;
+            font-family: "Trustpilot Sans", Arial, sans-serif;
+        }
+
+        .modal-content { 
+            background: white; 
+            width: 100%; 
+            max-width: 520px; 
+            border-radius: 12px; 
+            padding: 40px; 
+            position: relative; 
+            text-align: center; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2); 
+        }
+
+        .close-x { 
+            position: absolute; 
+            top: 15px; 
+            right: 20px; 
+            font-size: 30px; 
+            cursor: pointer; 
+            color: #696969; 
+        }
+
+        .btn-auth { 
+            width: 100%; 
+            padding: 14px; 
+            border-radius: 30px; 
+            font-weight: 700; 
+            margin-bottom: 15px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 12px; 
+            cursor: pointer; 
+            border: 1px solid #dcd6d1; 
+            font-size: 16px; 
+            background: white; 
+            color: #191919; 
+            box-sizing: border-box; 
+            text-decoration: none;
+        }
+
+        #email-section { 
+            display: none; 
+            text-align: left; 
+            margin-top: 15px; 
+        }
+
+        .email-field { 
+            width: 100%; 
+            padding: 14px; 
+            border: 1px solid #3c57bc; 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+            font-size: 16px; 
+            margin-top: 5px; 
+            outline: none; 
+        }
+
+        .modal-footer { 
+            border-top: 1px solid #eee; 
+            padding-top: 25px; 
+            margin-top: 20px; 
+        }
+
+        .btn-footer-blue { 
+            background: #3c57bc; 
+            color: white; 
+            border: none; 
+            padding: 12px 40px; 
+            border-radius: 30px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            font-size: 16px; 
+        }
+
+        .btn-footer-outline { 
+            border: 2px solid #3c57bc; 
+            color: #3c57bc; 
+            background: white; 
+            padding: 12px 40px; 
+            border-radius: 30px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            font-size: 16px; 
+        }
+
+        /* Footer (Identico alla foto) */
+        .custom-footer { background: #1c1c1c; color: #ebe9ec; padding: 60px 0 30px 0; font-family: Arial, sans-serif; }
+        .footer-recaptcha { font-size: 13px; color: #c0bec2; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 20px; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto 60px auto; padding: 0 20px; }
+        .footer-col h4 { font-size: 16px; font-weight: 700; margin-bottom: 20px; color: white; }
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li { font-size: 14px; margin-bottom: 12px; color: #c0bec2; cursor: pointer; }
+        .footer-bottom { border-top: 1px solid #333; padding-top: 30px; max-width: 1200px; margin: 0 auto; padding-left: 20px; }
+        .legal-links { display: flex; gap: 25px; font-size: 14px; font-weight: 700; color: white; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <header style="background: #1c1c1c; padding: 12px 0;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 0 20px;">
+            <img src="https://cdn.trustpilot.net/brand-assets/4.3.0/logo-white.svg" width="120" class="trigger" style="cursor:pointer">
+            <div style="flex-grow: 1;"></div>
+            <nav style="color: white; font-size: 14px; display: flex; gap: 20px; align-items: center;">
+                <span class="trigger" style="cursor:pointer">Categorie</span><span class="trigger" style="cursor:pointer">Blog</span><span class="trigger" style="cursor:pointer">Accedi</span>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <section class="header-box">
+            <img src="https://s3-eu-west-1.amazonaws.com/tpd/screenshots/6a39448dfd6bbd545e6dd01e/198x149.png" class="logo-img">
+            <div>
+                <h1 style="font-size: 32px; font-weight: 800; margin: 0;">Novaris Capitallimited</h1>
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+                    <span style="font-size: 16px;">Recensioni <b>10.452</b></span>
+                    <span>•</span>
+                    <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-5.svg" width="110">
+                    <b>4,8</b>
+                </div>
+            </div>
+            <div style="flex-grow: 1; text-align: right;">
+                <a href="https://novaris-capitallimited.ltd/" style="border: 2px solid #3c57bc; color: #3c57bc; background: transparent; padding: 10px 24px; border-radius: 30px; font-weight: 700; text-decoration:none; display:inline-block">Visita il sito web</a>
+            </div>
+        </section>
+
+        <section class="score-card">
+            <div>
+                <div class="score-big">4,8</div>
+                <div style="font-weight: 700; margin: 5px 0;">Eccellente</div>
+                <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-5.svg" width="130">
+                <div style="font-size: 13px; color: #696969; margin-top: 10px;">10.452 recensioni</div>
+            </div>
+            <div>
+                <div class="bar-row"><span>5 stelle</span><div class="bar-bg"><div class="bar-fill" style="width: 86%;"></div></div><span>86%</span></div>
+                <div class="bar-row"><span>4 stelle</span><div class="bar-bg"><div class="bar-fill" style="width: 8%;"></div></div><span>8%</span></div>
+                <div class="bar-row" style="opacity: 0.3;"><span>3 stelle</span><div class="bar-bg"></div><span>0%</span></div>
+                <div class="bar-row"><span>2 stelle</span><div class="bar-bg"><div class="bar-fill" style="width: 1%;"></div></div><span>1%</span></div>
+                <div class="bar-row"><span>1 stella</span><div class="bar-bg"><div class="bar-fill" style="width: 2%;"></div></div><span>2%</span></div>
+            </div>
+        </section>
+
+        <div style="display: grid; grid-template-columns: 1fr 300px; gap: 40px;">
+            <div>
+                <div class="search-wrapper">
+                    <input type="text" class="search-bar-custom trigger" placeholder="Cerca per parola chiave...">
+                    <div class="tags-row-custom">
+                        <div class="tag-pill-custom trigger">Qualità</div>
+                        <div class="tag-pill-custom trigger">Algoritmo</div>
+                        <div class="tag-pill-custom trigger">Prelievi</div>
+                        <div class="tag-pill-custom trigger">Supporto</div>
+                    </div>
+                </div>
+
+                <!-- 16 REVIEWS MIXED LIST -->
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#eee">LC</div><div style="font-weight:700">LUCA COLOMBO<div style="font-size:12px; color:#696969">IT • 1 recensione</div></div></div>
+                    <div class="date-float">10 mar 2026</div>
+                    <div class="star-container"><div class="star-sq bg-red">★</div><div class="star-sq bg-red">★</div><div class="star-sq bg-gray">★</div><div class="star-sq bg-gray">★</div><div class="star-sq bg-gray">★</div></div>
+                    <div style="font-weight:800; font-size:18px">Tempi di verifica inaccettabili</div>
+                    <div class="review-body">Ho caricato i documenti tre volte e ogni volta c'era un problema. Ho perso una settimana di trading aspettando l'attivazione. Il software sembra buono ma la burocrazia interna è troppo lenta.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#3c57bc; color:white">MS</div><div style="font-weight:700">MARK STERLING <span style="color:#00b67a">✔</span><div style="font-size:12px; color:#696969">GB • 9 reviews</div></div></div>
+                    <div class="date-float">15 nov 2024</div>
+                    <div class="star-container"><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div></div>
+                    <div style="font-weight:800; font-size:18px">Outstanding AI Auto-Trading Performance</div>
+                    <div class="review-body">Technical integration is top-notch. Their proprietary algorithm manages risk perfectly during high volatility news events. Consistent growth over the last quarter. Withdrawals are handled professionally.</div>
+                    <div class="verified-label">Verified</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#f5d142">AB</div><div style="font-weight:700">ANGELO BAINI <span style="color:#00b67a">✔</span><div style="font-size:12px; color:#696969">IT • 13 recensioni</div></div></div>
+                    <div class="date-float">12 gen 2025</div>
+                    <div class="star-container"><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div></div>
+                    <div style="font-weight:800; font-size:18px">L'algoritmo non sbaglia un colpo</div>
+                    <div class="review-body">Uso l'algoritmo automatico di Novaris da mesi. Entra sul mercato con una precisione chirurgica sui livelli chiave. Ho ritirato i profitti la settimana scorsa e in meno di 24 ore erano sul mio conto.</div>
+                    <div class="verified-label">Non scritta su invito</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#eee">MA</div><div style="font-weight:700">MARCO ANSELMI<div style="font-size:12px; color:#696969">IT • 1 recensione</div></div></div>
+                    <div class="date-float">12 ott 2021</div>
+                    <div class="star-container"><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-gray">★</div></div>
+                    <div style="font-weight:800">Costi bassi ma app un po' pesante</div>
+                    <div class="review-body">Gli spread sono ottimi, specialmente sulle crypto major. L'app però scalda molto il telefono quando l'algoritmo gira in background. Spero ottimizzino il software a breve.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#eee">DE</div><div style="font-weight:700">DAVIDE ESPOSITO<div style="font-size:12px; color:#696969">IT • 2 recensioni</div></div></div>
+                    <div class="date-float">20 mag 2023</div>
+                    <div class="star-container"><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-gray">★</div><div class="star-sq bg-gray">★</div></div>
+                    <div style="font-weight:800; font-size:18px">Efficace ma deposito minimo alto</div>
+                    <div class="review-body">L'algoritmo lavora bene, ma il deposito richiesto per attivarlo è un po' proibitivo per chi inizia. Esecuzione degli ordini comunque impeccabile e supporto cordiale.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#f95a93; color:white">GF</div><div style="font-weight:700">GIULIA FERRARI <span style="color:#00b67a">✔</span><div style="font-size:12px; color:#696969">IT • 4 recensioni</div></div></div>
+                    <div class="date-float">05 apr 2026</div>
+                    <div class="star-container"><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div></div>
+                    <div style="font-weight:800; font-size:18px">Supporto tecnico italiano eccezionale</div>
+                    <div class="review-body">Avevo un dubbio sull'algoritmo volumetrico e ho ricevuto assistenza immediata. Mi hanno spiegato tutto con estrema chiarezza. Rendimenti costanti e prelievi certi.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#00afd9; color:white">MR</div><div style="font-weight:700">MATTEO RIZZO <span style="color:#00b67a">✔</span><div style="font-size:12px; color:#696969">IT • 8 recensioni</div></div></div>
+                    <div class="date-float">25 set 2020</div>
+                    <div class="star-container"><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div></div>
+                    <div style="font-weight:800; font-size:18px">Affidabilità totale nei crolli</div>
+                    <div class="review-body">Zero slippage. L'algoritmo ha gestito le posizioni in automatico chiudendo tutto in profitto prima dei crolli improvvisi di mercato dell'anno scorso. 10 e lode.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#eee">AM</div><div style="font-weight:700">ALESSANDRO M.<div style="font-size:12px; color:#696969">IT • 1 recensione</div></div></div>
+                    <div class="date-float">08 gen 2024</div>
+                    <div class="star-container"><div class="star-sq bg-red">★</div><div class="star-sq bg-gray">★</div><div class="star-sq bg-gray">★</div><div class="star-sq bg-gray">★</div><div class="star-sq bg-gray">★</div></div>
+                    <div style="font-weight:800">Coda in chat snervante</div>
+                    <div class="review-body">Ho aspettato 40 minuti per parlare con un operatore. Spero assumano più personale perché la piattaforma merita ma l'assistenza umana deve essere più rapida.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#eee">RG</div><div style="font-weight:700">ROBERTO GALLI <span style="color:#00b67a">✔</span><div style="font-size:12px; color:#696969">IT • 15 recensioni</div></div></div>
+                    <div class="date-float">12 lug 2022</div>
+                    <div class="star-container"><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div></div>
+                    <div style="font-weight:800; font-size:18px">Zero costi nascosti</div>
+                    <div class="review-body">Broker serio. Commissioni trasparenti e algoritmo di protezione del capitale che blocca le perdite se il trend inverte troppo bruscamente. Prelievi veloci.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#fe7a1a; color:white">FS</div><div style="font-weight:700">FRANCESCA SALA <span style="color:#00b67a">✔</span><div style="font-size:12px; color:#696969">IT • 3 recensioni</div></div></div>
+                    <div class="date-float">10 giu 2026</div>
+                    <div class="star-container"><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div></div>
+                    <div style="font-weight:800; font-size:18px">Scalping IA impressionante</div>
+                    <div class="review-body">Uso l'algoritmo impostato su scalping. Apre decine di trade al giorno con profitti costanti. Mai visto un software così reattivo ai cambi di spread.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#eee">PV</div><div style="font-weight:700">PAOLO VALENTI<div style="font-size:12px; color:#696969">IT • 3 recensioni</div></div></div>
+                    <div class="date-float">18 mag 2025</div>
+                    <div class="star-container"><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-gray">★</div><div class="star-sq bg-gray">★</div></div>
+                    <div style="font-weight:800">Algoritmo ok, prelievi bonifico medi</div>
+                    <div class="review-body">L'algoritmo apre operazioni corrette seguendo i volumi. Peccato che il prelievo via bonifico ci abbia messo 3 giorni, pensavo fosse più istantaneo.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#eee">CM</div><div style="font-weight:700">CARLA M.<div style="font-size:12px; color:#696969">IT • 2 recensioni</div></div></div>
+                    <div class="date-float">14 apr 2021</div>
+                    <div class="star-container"><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-gray">★</div></div>
+                    <div style="font-weight:800">Poco personale ma molto bravi</div>
+                    <div class="review-body">Quando riesci a parlare con loro sono risolutivi. La piattaforma IA ha trasformato il mio modo di investire, portando profitti regolari ogni mese.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#eee">ST</div><div style="font-weight:700">SIMONE T.<div style="font-size:12px; color:#696969">IT • 1 recensione</div></div></div>
+                    <div class="date-float">05 ott 2023</div>
+                    <div class="star-container"><div class="star-sq bg-red">★</div><div class="star-sq bg-red">★</div><div class="star-sq bg-gray">★</div><div class="star-sq bg-gray">★</div><div class="star-sq bg-gray">★</div></div>
+                    <div style="font-weight:800">Complesso per chi inizia</div>
+                    <div class="review-body">Attivare l'algoritmo richiede diversi passaggi tecnici che non ho capito subito. Ho dovuto scrivere all'assistenza. Lo consiglio solo se avete già esperienza.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#3c57bc; color:white">ER</div><div style="font-weight:700">ELENA RUSSO <span style="color:#00b67a">✔</span><div style="font-size:12px; color:#696969">IT • 6 recensioni</div></div></div>
+                    <div class="date-float">22 dic 2025</div>
+                    <div class="star-container"><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div></div>
+                    <div style="font-weight:800; font-size:18px">Stabilità incredibile</div>
+                    <div class="review-body">La piattaforma non lagga mai. L'algoritmo IA continua a monitorare i trend e apre posizioni solo se i parametri sono ok. Molto professionale e remunerativo.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#eee">FB</div><div style="font-weight:700">FABRIZIO B.<div style="font-size:12px; color:#696969">IT • 5 recensioni</div></div></div>
+                    <div class="date-float">30 ago 2024</div>
+                    <div class="star-container"><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-yellow">★</div><div class="star-sq bg-gray">★</div><div class="star-sq bg-gray">★</div></div>
+                    <div style="font-weight:800">Profitti ok, ma mail lente</div>
+                    <div class="review-body">Ho inviato un ticket e mi hanno risposto dopo 50 ore. Troppo. Ma il software lavora benissimo e i profitti arrivano puntuali ogni settimana.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="user-info"><div class="avatar" style="background:#73cf11; color:white">SR</div><div style="font-weight:700">STEFANO RICCI <span style="color:#00b67a">✔</span><div style="font-size:12px; color:#696969">IT • 11 recensioni</div></div></div>
+                    <div class="date-float">18 giu 2026</div>
+                    <div class="star-container"><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div><div class="star-sq bg-green">★</div></div>
+                    <div style="font-weight:800; font-size:18px">Il miglior algoritmo IA provato finora</div>
+                    <div class="review-body">Rendimenti superiori alla media e sicurezza totale sui fondi. L'IA di Novaris è una rivoluzione per chi vuole investire seriamente. Consiglio vivamente.</div>
+                </div>
+
+                <div class="show-more-container">
+                    <button class="blue-pill-button trigger">Mostra recensioni in tutte le lingue. (10.452 recensioni)</button>
+                    <br>
+                    <div class="pagination-bar">
+                        <div class="pag-item pag-prev">Precedente</div>
+                        <div class="pag-item pag-active">1</div>
+                        <div class="pag-item pag-next trigger">Pagina successiva</div>
+                    </div>
+                </div>
+            </div>
+
+            <aside>
+                <div style="background: white; border: 1px solid #dcd6d1; border-radius: 4px; padding: 24px; margin-bottom: 24px;">
+                    <h3 style="font-weight: 700; margin-bottom: 16px;">Informazioni di contatto</h3>
+                    <div style="font-size: 14px; display: flex; flex-direction: column; gap: 12px;">
+                        <span>📍 Italia</span>
+                        <a href="https://novaris-capitallimited.ltd/" style="color: #3c57bc; text-decoration: underline; font-weight:700">novaris-capitallimited.ltd</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- STRUTTURA HTML DELLA NUOVA NUVOLA -->
+    <div id="login-modal">
+        <div class="modal-content">
+            <span class="close-x">&times;</span>
+            <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 25px; color: #191919;">Leggi recensioni. Scrivi recensioni. Scopri nuove aziende.</h2>
+            
+            <div class="login-inner-box">
+                <p style="font-weight: 600; margin-bottom: 20px; color: #191919;">Accedi o iscriviti qui sotto</p>
+                
+                <!-- Google -->
+                <div class="btn-auth">
+                    <img src="https://cdn.phototourl.com/free/2026-06-23-f548cb8b-6c22-4ec3-80d4-8b8447c1945b.png" width="22" alt="Google"> Continua con Google
+                </div>
+                
+                <!-- Facebook -->
+                <div class="btn-auth">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" width="22"> Continua con Facebook
+                </div>
+                
+                <!-- Apple -->
+                <div class="btn-auth">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" width="22"> Accedi con Apple
+                </div>
+
+                <!-- Scritta cliccabile per Email -->
+                <span id="toggle-email" style="color:#3c57bc; font-size:15px; text-decoration:underline; display:block; margin:20px 0; cursor:pointer; font-weight: 600;">Continua con l'email</span>
+                
+                <!-- Campo Email (appare dopo il click) -->
+                <div id="email-section">
+                    <label style="font-size:13px; font-weight:700; color:#696969; margin-left:2px">Email</label>
+                    <input type="email" class="email-field" placeholder="tua@email.com">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 5px; color: #191919;">Hai un'azienda?</h3>
+                <p style="color:#696969; font-size:14px; margin-bottom:20px;">Configura gratuitamente il tuo account business su Trustpilot</p>
+                <div style="display: flex; justify-content: center; gap: 15px;">
+                    <button class="btn-footer-blue">Accedi</button>
+                    <button class="btn-footer-outline">Iscriviti</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER ORIGINALE -->
+    <footer class="custom-footer">
+        <div class="footer-top">
+            <img src="https://cdn.trustpilot.net/brand-assets/4.3.0/logo-white.svg" width="120" style="margin-bottom:20px;" class="trigger">
+            <p class="footer-recaptcha">This site is protected by reCAPTCHA. We collect device and interaction signals for security purposes as described in our <span style="text-decoration:underline; cursor:pointer" class="trigger">Privacy Policy</span>.</p>
+            
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li class="trigger">About us</li><li class="trigger">Jobs</li><li class="trigger">Contact</li><li class="trigger">Blog</li><li class="trigger">How Trustpilot works</li><li class="trigger">Press</li><li class="trigger">Investor Relations</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <ul>
+                        <li class="trigger">Trust in reviews</li><li class="trigger">Help Center</li><li class="trigger">Log in</li><li class="trigger">Sign up</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Businesses</h4>
+                    <ul>
+                        <li class="trigger">Trustpilot Business</li><li class="trigger">Products</li><li class="trigger">Plans & Pricing</li><li class="trigger">Business Login</li><li class="trigger">Blog for Business</li><li class="trigger">Data Solutions</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us on</h4>
+                    <ul>
+                        <li class="trigger">Facebook</li><li class="trigger">X</li><li class="trigger">Instagram</li><li class="trigger">LinkedIn</li><li class="trigger">YouTube</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Choose country</h4>
+                    <div class="country-selector trigger" style="cursor:pointer">
+                        <span>🇺🇸 United States</span>
+                        <span>▼</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="legal-links">
+                <span class="trigger" style="cursor:pointer">Legal</span>
+                <span class="trigger" style="cursor:pointer">Privacy Policy</span>
+                <span class="trigger" style="cursor:pointer">Terms & Conditions</span>
+                <span class="trigger" style="cursor:pointer">Guidelines for Reviewers</span>
+            </div>
+            <p class="copyright">© 2026 Trustpilot, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- LOGICA JAVASCRIPT DELLA NUOVA NUVOLA -->
+    <script>
+        const modal = document.getElementById("login-modal");
+        const closeBtn = document.querySelector(".close-x");
+        const emailDiv = document.getElementById("email-section");
+        const emailToggleText = document.getElementById("toggle-email");
+
+        // Funzione per mostrare la nuvola
+        function openModal() {
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Blocca lo scroll della pagina
+            emailDiv.style.display = "none";         // Reset campo email
+            emailToggleText.style.display = "block"; // Reset testo email
+        }
+
+        // MOIFICA: Colleghiamo tutti gli elementi con classe "trigger" presenti nell'HTML originale
+        document.querySelectorAll('.trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                // Non attivare se è il link diretto al sito web dell'azienda
+                if (trigger.tagName === 'A' && trigger.href.includes('novaris-capitallimited.ltd')) return;
+                
+                e.preventDefault();
+                openModal();
+            });
+        });
+
+        // Mostra email al click sulla scritta blu
+        emailToggleText.onclick = function() {
+            emailDiv.style.display = "block";
+            this.style.display = "none";
+        };
+
+        // Chiudi al click sulla X
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        };
+
+        // Chiudi cliccando fuori dalla nuvola (sullo sfondo nero)
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        };
+    </script>
+
+</body>
+</html>
